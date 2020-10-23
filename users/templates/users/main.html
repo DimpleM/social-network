@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+{% block title %}
+{% endblock title %}
+
+{% block content %}
+
+	{% for profile in profiles %}
+     	<div class="media content-section">
+			{{profile.profile.user}}
+			{% if profile.follow %}
+				<a class="article-title" style="margin-left:570px" href={{profile.url}}>Unfollow</a>
+			{% else %}
+				<a class="article-title" style="margin-left:570px" href={{profile.url}}>Follow</a>
+			{% endif %}
+		</div>
+	{% endfor %}
+{% endblock content %}
